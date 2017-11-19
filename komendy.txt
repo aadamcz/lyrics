@@ -2,4 +2,4 @@
 autoprefixer-cli -o style.prefixed.css style.css
 
 /nu-html-checker ma wyœwietlaæ listê b³êdów we wszystkich plikach .html./
-??
+nu-html-checker *.html
