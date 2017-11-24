@@ -26,7 +26,7 @@
     "build:autoprefixer": "autoprefixer-cli css/style.css",
     "watch:browsersync": "node_modules/.bin/browser-sync start --server --files css/*.css *.html",
     "watch": "parallelshell \"npm run watch:sass\" \"npm run watch:autoprefixer\" ",
-    "watch:sass": "sass --watch sass:css",
+    "watch:sass": "sass --watch sass/*.sass:css/*.css",
     "watch:autoprefixer": "onchange -d 100 css/style.css -- autoprefixer-cli -o css/style.prefixed.css css/*.css"
   },
   "repository": {
