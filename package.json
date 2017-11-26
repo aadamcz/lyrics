@@ -17,17 +17,17 @@
     "parallelshell": "^3.0.2",
     "rimraf": "^2.6.2"
   },
-  "scripts": {
+ "scripts": {
     "test": "npm run test:html",
     "test:html": "glob-run nu-html-checker *.html",
     "build": "npm run build:sass && npm run build:autoprefixer && npm run test",
     "build:clean": "rimraf css/*.css",
     "build:sass": "sass --sourcemap=none --update sass:css",
-    "build:autoprefixer": "autoprefixer-cli css/style.css",
+    "build:autoprefixer": "autoprefixer-cli -o css/*.css",
     "watch:browsersync": "node_modules/.bin/browser-sync start --server --files css/*.css *.html",
     "watch": "parallelshell \"npm run watch:sass\" \"npm run watch:autoprefixer\" ",
-    "watch:sass": "sass --watch sass:css",
-    "watch:autoprefixer": "onchange -d 100 css/style.css -- autoprefixer-cli -o css/style.prefixed.css css/*.css"
+    "watch:sass": "sass --watch --sourcemap=none sass:css",
+    "watch:autoprefixer": "onchange -d 100 css/*.css -- autoprefixer-cli -o css/style.prefixed.css css/*.css"
   },
   "repository": {
     "type": "git",
